@@ -9,6 +9,7 @@ RUN yum -y install -y awscli azure-cli bind-utils git wget openssh-client python
 RUN yum -y install https://releases.ansible.com/ansible/rpm/release/epel-7-x86_64/ansible-2.7.5-1.el7.ans.noarch.rpm
 RUN yum -y update
 RUN pip install --upgrade pip
+RUN pip install purestorage
 
 RUN mkdir /etc/ansible/playbooks /etc/terraform /nmsdk /github /netapp /netapp/.git
 RUN sed -i 's/#host_key_checking/host_key_checking/g' /etc/ansible/ansible.cfg
